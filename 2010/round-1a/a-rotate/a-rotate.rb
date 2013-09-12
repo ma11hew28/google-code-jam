@@ -16,7 +16,7 @@ require 'ruby-debug'
 require 'pp'
 
 infile = File.new(ARGV[0])
-outfile = File.new(ARGV[0].sub("in","out"), "w")
+outfile = File.new(ARGV[0].sub("in", "out"), "w") # "w" truncates file
 
 T = infile.scanf("%d\n")[0]
 
@@ -28,7 +28,6 @@ T = infile.scanf("%d\n")[0]
   last.times { line_format += " %c" }
   line_format += "\n"
 
-  
   n.times do |tr|
     line = infile.scanf(line_format)
     row = Array.new(n)
@@ -39,7 +38,7 @@ T = infile.scanf("%d\n")[0]
         rri -= 1
       end
     end
-    
+
     table[tr] = row
   end
   pp table
